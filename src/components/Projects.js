@@ -24,7 +24,7 @@ const Projects = () => {
       title: 'Travelbook',
       image: Travelbook,
       site: 'https://www.travel-book.ca',
-      repo: 'https://github.com/dustinirving/travelbook',
+      repo: 'https://github.com/dustinirving/travel-book',
       alt: 'Travelbook',
       description:
         'A social media platform that allows you to share your own travel experiences with fellow travellers.'
