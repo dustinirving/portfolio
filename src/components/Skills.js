@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Typography, Tag, Card, Row, Col, Divider } from 'antd'
+import { Typography, Tag, Card, Row, Col, List } from 'antd'
 
 const { Title, Text } = Typography
 const Skills = () => {
@@ -153,20 +153,110 @@ const Skills = () => {
         headStyle={{ border: 'none' }}
       >
         <Row>
-          {other.map(item => (
-            <Col xs={12} sm={12} md={8} lg={8} xl={6}>
-              <Card bordered={false} style={{ backgroundColor: 'white' }}>
+          <Col xs={12} sm={12} md={12} lg={12} xl={12}>
+            <List>
+              <List.Item style={{ border: 'none' }}>
                 <Tag
                   style={{
                     lineHeight: '22px',
-                    fontSize: '15px'
+                    fontSize: '15px',
+                    margin: 'auto',
+                    textAlign: 'left'
                   }}
                 >
-                  {item.skill}
+                  Git version-control
                 </Tag>
-              </Card>
-            </Col>
-          ))}
+              </List.Item>
+              <List.Item style={{ border: 'none' }}>
+                <Tag
+                  style={{
+                    lineHeight: '22px',
+                    fontSize: '15px',
+                    margin: 'auto',
+                    textAlign: 'left'
+                  }}
+                >
+                  RESTful APIs
+                </Tag>
+              </List.Item>
+              <List.Item style={{ border: 'none' }}>
+                <Tag
+                  style={{
+                    lineHeight: '22px',
+                    fontSize: '15px',
+                    margin: 'auto',
+                    textAlign: 'left'
+                  }}
+                >
+                  Agile Development
+                </Tag>
+              </List.Item>
+              <List.Item style={{ border: 'none' }}>
+                <Tag
+                  style={{
+                    lineHeight: '22px',
+                    fontSize: '15px',
+                    margin: 'auto',
+                    textAlign: 'left'
+                  }}
+                >
+                  MVC Framework
+                </Tag>
+              </List.Item>
+            </List>
+          </Col>
+          <Col xs={12} sm={12} md={12} lg={12} xl={12}>
+            <List>
+              <List.Item style={{ border: 'none' }}>
+                <Tag
+                  style={{
+                    lineHeight: '22px',
+                    fontSize: '15px',
+                    margin: 'auto',
+                    textAlign: 'left'
+                  }}
+                >
+                  Data Structures and Algorithms
+                </Tag>
+              </List.Item>
+              <List.Item style={{ border: 'none' }}>
+                <Tag
+                  style={{
+                    lineHeight: '22px',
+                    fontSize: '15px',
+                    margin: 'auto',
+                    textAlign: 'left'
+                  }}
+                >
+                  JEST
+                </Tag>
+              </List.Item>
+              <List.Item style={{ border: 'none' }}>
+                <Tag
+                  style={{
+                    lineHeight: '22px',
+                    fontSize: '15px',
+                    margin: 'auto',
+                    textAlign: 'left'
+                  }}
+                >
+                  Mobile-first design
+                </Tag>
+              </List.Item>
+              <List.Item style={{ border: 'none' }}>
+                <Tag
+                  style={{
+                    lineHeight: '22px',
+                    fontSize: '15px',
+                    margin: 'auto',
+                    textAlign: 'left'
+                  }}
+                >
+                  Progressive Web Applications
+                </Tag>
+              </List.Item>
+            </List>
+          </Col>
         </Row>
       </Card>
     </Typography>

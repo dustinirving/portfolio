@@ -23,7 +23,7 @@ const Education = () => {
             </span>
             <List.Item.Meta
               title='Certificate in Web Development'
-              description='Ant Design, a design language for background applications, is refined by Ant UED Team'
+              description='A 6-month intensive coding bootcamp in full stack web development. Achieved an A+ Average.'
             />
           </List.Item>
           <List.Item
@@ -41,7 +41,7 @@ const Education = () => {
             </span>
             <List.Item.Meta
               title='TESL Certificate'
-              description='Ant Design, a design language for background applications, is refined by Ant UED Team'
+              description='Completed a 100 hour certificate to Teach English as a Second Language'
             />
           </List.Item>
           <List.Item
@@ -58,7 +58,7 @@ const Education = () => {
             </span>
             <List.Item.Meta
               title='Bachelor of Science in Biochemistry'
-              description='Ant Design, a design language for background applications, is refined by Ant UED Team'
+              description='Earned a Honours Bachelor of Science with a Specialization in Biochemistry. Was granted a $2000 entrance scholarship'
             />
           </List.Item>
         </List>
