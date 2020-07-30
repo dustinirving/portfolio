@@ -16,7 +16,7 @@ const Education = () => {
               textAlign: 'left',
               margin: 'auto',
               marginBottom: 50,
-              width: '60%'
+              width: width > 900 ? '60%' : '80%'
             }}
           >
             Carleton University &nbsp;
@@ -34,7 +34,7 @@ const Education = () => {
               textAlign: 'left',
               margin: 'auto',
               marginBottom: 50,
-              width: '60%'
+              width: width > 900 ? '60%' : '80%'
             }}
           >
             University of Ottawa &nbsp;
@@ -51,7 +51,7 @@ const Education = () => {
               fontSize: '24px',
               textAlign: 'left',
               margin: 'auto',
-              width: '60%'
+              width: width > 900 ? '60%' : '80%'
             }}
           >
             University of Ottawa &nbsp;

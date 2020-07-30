@@ -1,12 +1,17 @@
 import React from 'react'
 import { Card, Form, Input, Button, Typography, notification } from 'antd'
 import useWindowSize from '../utils/useWindowSize'
+import * as emailjs from 'emailjs-com'
 const { Title } = Typography
 
 const Contact = () => {
   const [width] = useWindowSize()
   const [form] = Form.useForm()
   const onFinish = values => {
+    emailjs
+      .send('gmail', 'dustintemplate', values, 'user_8tu1q7vm5IH8xoPFGkDtg')
+      .then()
+      .catch()
     openNotificationWithIcon('success')
     form.resetFields()
   }
