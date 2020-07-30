@@ -71,7 +71,14 @@ const Projects = () => {
         <Title>Projects</Title>
         <Row gutter={[50, 20]}>
           {projects.map(project => (
-            <Col xs={24} sm={24} md={12} lg={12} xl={8}>
+            <Col
+              xs={22}
+              sm={20}
+              md={12}
+              lg={12}
+              xl={8}
+              style={{ margin: 'auto' }}
+            >
               <Card
                 cover={<img alt={project.alt} src={project.image} style={{}} />}
               >

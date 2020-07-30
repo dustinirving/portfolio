@@ -7,30 +7,45 @@ import {
   FilePdfFilled,
   MailFilled
 } from '@ant-design/icons'
+import resume from '../resources/Resume.pdf'
+import useWindowSize from '../utils/useWindowSize'
 const { Title, Paragraph, Text } = Typography
 
 const About = () => {
+  const [width] = useWindowSize()
+
   const styling = {
     iconSize: {
-      fontSize: '40px',
-      marginTop: '200px',
-      marginBottom: '50px'
+      fontSize: width > 500 ? 40 : 35,
+      marginTop: width > 1000 ? 150 : 100,
+      marginBottom: 50
     }
   }
   return (
     <>
-      <Typography style={{ padding: '50px' }}>
-        <Title style={{ fontSize: '60px', marginBottom: 0 }}>
+      <Typography style={{ paddingTop: width > 600 ? '5%' : '2%' }}>
+        <Title style={{ fontSize: width > 900 ? 60 : 50, marginBottom: 0 }}>
           Dustin Irving
         </Title>
-        <Title style={{ marginTop: 0, marginBottom: 5, color: 'grey' }}>
+        <Title
+          style={{
+            fontSize: width > 900 ? 38 : 32,
+            marginTop: 0,
+            marginBottom: 5,
+            color: 'grey'
+          }}
+        >
           Full-Stack Web Developer
         </Title>
         <Paragraph style={{ fontSize: 18 }}>
-          Ottawa, ON | 613-292-4533
+          Ottawa, ON | 613-292-4533 | dustin.irving@gmail.com
         </Paragraph>
         <Paragraph
-          style={{ fontSize: '18px', textAlign: 'left', marginTop: '50px' }}
+          style={{
+            fontSize: width > 900 ? 18 : 16,
+            textAlign: 'left',
+            marginTop: '50px'
+          }}
         >
           Welcome to my portfolio! I'm Dustin, a web developer with a
           certificate in Web Development from Carleton University's Coding
@@ -51,8 +66,17 @@ const About = () => {
               style={{ paddingRight: '40px', color: '#0077B5' }}
             />
           </a>
-          <FilePdfFilled style={{ paddingRight: '40px', color: '#F40F02' }} />
-          <MailFilled />
+          <a href={resume} target='_blank' rel='noopener noreferrer'>
+            <FilePdfFilled style={{ paddingRight: '40px', color: '#F40F02' }} />
+          </a>
+          <a
+            href='mailto:dustin.irving@gmail.com? subject=subject text'
+            target='_blank'
+            rel='noopener noreferrer'
+            style={{ color: 'grey' }}
+          >
+            <MailFilled />
+          </a>
         </div>
       </Typography>
     </>

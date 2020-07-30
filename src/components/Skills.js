@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import { Typography, Tag, Card, Row, Col, List } from 'antd'
+import useWindowSize from '../utils/useWindowSize'
 
 const { Title, Text } = Typography
 const Skills = () => {
+  const [width] = useWindowSize()
   const styling = {
     tag: {
       lineHeight: '30px',
@@ -31,10 +33,11 @@ const Skills = () => {
       icon: 'devicon-css3-plain'
     },
     {
-      skill: 'CSS libraries',
+      skill: 'Bootstrap',
       color: '#553C7B',
       icon: 'devicon-bootstrap-plain'
-    }
+    },
+    { skill: 'Handlebars', color: '', icon: 'devicon-handlebars-plain colored' }
   ])
   const [backend, setBackend] = useState([
     {
@@ -52,6 +55,11 @@ const Skills = () => {
       skill: 'MySQL',
       color: '',
       icon: 'devicon-mysql-plain colored'
+    },
+    {
+      skill: 'Python',
+      color: '',
+      icon: 'devicon-python-plain colored'
     }
   ])
   const [other, setOther] = useState([
@@ -93,7 +101,7 @@ const Skills = () => {
               borderColor: 'lightGray',
               borderRadius: '15px'
             }}
-            headStyle={{ border: 'none' }}
+            headStyle={{ border: 'none', fontSize: 22 }}
           >
             <Row>
               {frontend.map(item => (
@@ -120,9 +128,10 @@ const Skills = () => {
             style={{
               backgroundColor: 'white',
               borderColor: 'lightGray',
-              borderRadius: '15px'
+              borderRadius: '15px',
+              marginTop: width > 991 ? 0 : 20
             }}
-            headStyle={{ border: 'none' }}
+            headStyle={{ border: 'none', fontSize: 22 }}
           >
             <Row>
               {backend.map(item => (
@@ -147,13 +156,13 @@ const Skills = () => {
         style={{
           backgroundColor: 'white',
           borderColor: 'lightGray',
-          marginTop: '40px',
+          marginTop: 20,
           borderRadius: '15px'
         }}
-        headStyle={{ border: 'none' }}
+        headStyle={{ border: 'none', fontSize: 22 }}
       >
         <Row>
-          <Col xs={12} sm={12} md={12} lg={12} xl={12}>
+          <Col xs={24} sm={24} md={12} lg={12} xl={12}>
             <List>
               <List.Item style={{ border: 'none' }}>
                 <Tag
@@ -205,7 +214,7 @@ const Skills = () => {
               </List.Item>
             </List>
           </Col>
-          <Col xs={12} sm={12} md={12} lg={12} xl={12}>
+          <Col xs={24} sm={24} md={12} lg={12} xl={12}>
             <List>
               <List.Item style={{ border: 'none' }}>
                 <Tag

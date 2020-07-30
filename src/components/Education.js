@@ -1,11 +1,13 @@
 import React from 'react'
 import { List, Typography } from 'antd'
+import useWindowSize from '../utils/useWindowSize'
 const { Title, Paragraph, Text } = Typography
 
 const Education = () => {
+  const [width] = useWindowSize()
   return (
     <>
-      <Typography style={{ marginTop: '150px' }}>
+      <Typography style={{}}>
         <Title>Education</Title>
         <List>
           <List.Item
@@ -19,7 +21,7 @@ const Education = () => {
           >
             Carleton University &nbsp;
             <span style={{ fontStyle: 'italic', fontSize: 18 }}>
-              (Feb 2020 - July 2020)
+              (Feb 2020 - Jul 2020)
             </span>
             <List.Item.Meta
               title='Certificate in Web Development'
@@ -37,7 +39,7 @@ const Education = () => {
           >
             University of Ottawa &nbsp;
             <span style={{ fontStyle: 'italic', fontSize: 18 }}>
-              (Feb 2020 - July 2020)
+              (Sep 2016 - Oct 2016)
             </span>
             <List.Item.Meta
               title='TESL Certificate'
@@ -54,7 +56,7 @@ const Education = () => {
           >
             University of Ottawa &nbsp;
             <span style={{ fontStyle: 'italic', fontSize: 18 }}>
-              (Feb 2020 - July 2020)
+              (Sep 2012 - Apr 2016)
             </span>
             <List.Item.Meta
               title='Bachelor of Science in Biochemistry'
