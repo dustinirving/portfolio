@@ -43,7 +43,7 @@ const Education = () => {
             </span>
             <List.Item.Meta
               title='TESL Certificate'
-              description='Completed a 100 hour certificate to Teach English as a Second Language'
+              description='Completed a 100 hour certificate to Teach English as a Second Language.'
             />
           </List.Item>
           <List.Item

@@ -23,8 +23,6 @@ const Sidebar = () => {
 
   const styling = {
     menu: {
-      //   backgroundColor: '#3d7ab8',
-      //   color: 'white',
       paddingTop: '40px',
       fontWeight: 'bold',
       textAlign: width > 767 ? 'left' : 'center'
@@ -40,8 +38,7 @@ const Sidebar = () => {
     },
     menuItem: {
       paddingLeft: width > 767 ? '50px' : 0
-    },
-    align: {}
+    }
   }
 
   return (
@@ -59,6 +56,7 @@ const Sidebar = () => {
           style={styling.menu}
           inlineCollapsed={collapsed}
           theme='dark'
+          selectable={false}
         >
           <div style={styling.padding}>
             <img src={Dustin} style={styling.border} />

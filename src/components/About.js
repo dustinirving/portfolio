@@ -21,6 +21,14 @@ const About = () => {
       marginBottom: 50
     }
   }
+
+  const changeOpacity = e => {
+    e.target.style.opacity = 0.6
+  }
+  const defaultOpacity = e => {
+    e.target.style.opacity = 1
+  }
+
   return (
     <>
       <Typography style={{ paddingTop: width > 600 ? '5%' : '2%' }}>
@@ -59,15 +67,28 @@ const About = () => {
         </Paragraph>
         <div className='icons-list' style={styling.iconSize}>
           <a target='_blank' href='https://www.github.com/dustinirving'>
-            <GithubFilled style={{ paddingRight: '40px', color: 'black' }} />
+            <GithubFilled
+              onMouseOver={changeOpacity}
+              onMouseOut={defaultOpacity}
+              style={{ color: 'black', marginRight: '40px' }}
+              title='Github'
+            />
           </a>
           <a target='_blank' href='https://www.linkedin.com/in/dustin-irving'>
             <LinkedinFilled
-              style={{ paddingRight: '40px', color: '#0077B5' }}
+              onMouseOver={changeOpacity}
+              onMouseOut={defaultOpacity}
+              style={{ marginRight: '40px', color: '#0077B5' }}
+              title='LinkedIn'
             />
           </a>
           <a href={resume} target='_blank' rel='noopener noreferrer'>
-            <FilePdfFilled style={{ paddingRight: '40px', color: '#F40F02' }} />
+            <FilePdfFilled
+              onMouseOver={changeOpacity}
+              onMouseOut={defaultOpacity}
+              style={{ marginRight: '40px', color: '#F40F02' }}
+              title='Resume'
+            />
           </a>
           <a
             href='mailto:dustin.irving@gmail.com? subject=subject text'
@@ -75,7 +96,11 @@ const About = () => {
             rel='noopener noreferrer'
             style={{ color: 'grey' }}
           >
-            <MailFilled />
+            <MailFilled
+              onMouseOver={changeOpacity}
+              onMouseOut={defaultOpacity}
+              title='Email'
+            />
           </a>
         </div>
       </Typography>

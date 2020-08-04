@@ -90,7 +90,7 @@ const Skills = () => {
   ])
   return (
     <Typography style={{ backgroundColor: '#f0f2f5', marginTop: 150 }}>
-      <Title>Technical Skills</Title>
+      <Title style={{ paddingBottom: '1rem' }}>Technical Skills</Title>
       <Row>
         <Col xs={24} sm={24} md={24} lg={11} xl={11}>
           <Card

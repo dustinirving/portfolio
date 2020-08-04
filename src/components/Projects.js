@@ -10,7 +10,7 @@ const { Title } = Typography
 const { Meta } = Card
 
 const Projects = () => {
-  const [projects, setProjects] = useState([
+  const [projects] = useState([
     {
       title: 'Vogi',
       image: Vogi,
@@ -18,7 +18,7 @@ const Projects = () => {
       repo: 'https://github.com/dustinirving/vogi',
       alt: 'Vogi',
       description:
-        'Vogi allows other organizations and volunteers to connect and work on projects together to mutually benefit.'
+        'Vogi connects volunteers with organizations, to work on projects together and mutually benefit.'
     },
     {
       title: 'Travelbook',
@@ -30,13 +30,13 @@ const Projects = () => {
         'A social media platform that allows you to share your own travel experiences with fellow travellers.'
     },
     {
-      title: 'Covid-19 tracker',
+      title: 'Covid-19 Tracker',
       image: Covid,
       site: 'https://lagbana.github.io/covid19-tracker/',
       repo: 'https://github.com/dustinirving/covid19-tracker',
       alt: 'Covid-19 Tracker',
       description:
-        'The Covid-19 Tracker retrieves, displays, and visualizes covid-19 related data, and provides the user with related news.'
+        'Displays the latest data regarding cases of COVID-19 in a graph and provides the user with related news updates.'
     },
     {
       title: 'Good Samaritan',
@@ -62,13 +62,20 @@ const Projects = () => {
       alt: 'Employee Tracking CLI',
       repo: 'https://github.com/dustinirving/employee-tracking-cli',
       description:
-        'This is a command line application that allows the user to manage employees, roles and departments.'
+        'A command line application that allows the user to manage employees, roles and departments in a database.'
     }
   ])
+
+  const changeColor = e => {
+    e.target.style.color = '#001529'
+  }
+  const defaultColor = e => {
+    e.target.style.color = 'grey'
+  }
   return (
     <>
       <Typography style={{ marginTop: 50 }}>
-        <Title>Projects</Title>
+        <Title style={{ paddingBottom: '1rem' }}>Projects</Title>
         <Row gutter={[50, 20]}>
           {projects.map(project => (
             <Col
@@ -79,14 +86,14 @@ const Projects = () => {
               xl={8}
               style={{ margin: 'auto' }}
             >
-              <Card
-                cover={<img alt={project.alt} src={project.image} style={{}} />}
-              >
+              <Card cover={<img alt={project.alt} src={project.image} />}>
                 <Meta title={project.title} description={project.description} />
                 <br />
                 <div>
                   <Tag>
                     <a
+                      onMouseOver={changeColor}
+                      onMouseOut={defaultColor}
                       target='_blank'
                       style={{ color: 'grey' }}
                       href={project.repo}
@@ -97,6 +104,8 @@ const Projects = () => {
                   {project.site ? (
                     <Tag>
                       <a
+                        onMouseOver={changeColor}
+                        onMouseOut={defaultColor}
                         target='_blank'
                         style={{ color: 'grey' }}
                         href={project.site}

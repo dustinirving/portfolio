@@ -19,7 +19,8 @@ const Home = () => {
           style={{
             paddingLeft: width > 600 ? '5%' : '4%',
             paddingRight: width > 600 ? '5%' : '4%',
-            backgroundColor: '#F0F2F5'
+            backgroundColor: '#F0F2F5',
+            textAlign: 'center'
           }}
         >
           <div id='about' style={{ minHeight: '100vh' }}>
