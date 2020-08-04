@@ -6,10 +6,12 @@ import Travelbook from '../images/travelbook.png'
 import Vogi from '../images/vogi.png'
 import Transactions from '../images/transactions.jpg'
 import Employee from '../images/employee.jpg'
+import useWindowSize from '../utils/useWindowSize'
 const { Title } = Typography
 const { Meta } = Card
 
 const Projects = () => {
+  const [width] = useWindowSize()
   const [projects] = useState([
     {
       title: 'Vogi',
@@ -75,7 +77,11 @@ const Projects = () => {
   return (
     <>
       <Typography style={{ marginTop: 50 }}>
-        <Title style={{ paddingBottom: '1rem' }}>Projects</Title>
+        <Title
+          style={{ paddingBottom: '1rem', fontSize: width > 500 ? 38 : 32 }}
+        >
+          Projects
+        </Title>
         <Row gutter={[50, 20]}>
           {projects.map(project => (
             <Col

@@ -8,7 +8,7 @@ const Education = () => {
   return (
     <>
       <Typography style={{}}>
-        <Title>Education</Title>
+        <Title style={{ fontSize: width > 500 ? 38 : 32 }}>Education</Title>
         <List>
           <List.Item
             style={{

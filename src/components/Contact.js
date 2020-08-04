@@ -27,7 +27,7 @@ const Contact = () => {
   }
   return (
     <>
-      <Title>Contact Me</Title>
+      <Title style={{ fontSize: width > 500 ? 38 : 32 }}>Contact Me</Title>
       <Card
         style={{
           width: width > 900 ? '60%' : '80%',
