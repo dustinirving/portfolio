@@ -99,14 +99,14 @@ const Skills = () => {
   ])
   return (
     <Typography style={{ backgroundColor: '#f0f2f5', marginTop: 150 }}>
-      <Title style={{ paddingBottom: '1rem', fontSize: width > 500 ? 38 : 32 }}>
+      <Title style={{ paddingBottom: '1rem', fontSize: width > 500 ? 38 : 28 }}>
         Technical Skills
       </Title>
       <Row gutter={20}>
         <Col xs={24} sm={24} md={24} lg={24} xl={12}>
           <Card
             title='Frontend'
-            bodyStyle={{ border: 'none' }}
+            bodyStyle={{ border: 'none', paddingTop: 0 }}
             style={{
               backgroundColor: 'white',
               borderColor: 'lightGray',
@@ -120,7 +120,9 @@ const Skills = () => {
                   <Card bordered={false} style={{ backgroundColor: 'white' }}>
                     <i style={{ fontSize: '30px' }} class={item.icon}></i>
                     <br />
-                    <span style={{ fontSize: '15px' }}>{item.skill}</span>
+                    <span style={{ fontSize: width < 400 ? 9 : 15 }}>
+                      {item.skill}
+                    </span>
                   </Card>
                 </Col>
               ))}
@@ -134,7 +136,7 @@ const Skills = () => {
                     ></path>
                   </svg>
                   <br />
-                  <span style={{ fontSize: '15px' }}>Redux</span>
+                  <span style={{ fontSize: width < 400 ? 9 : 15 }}>Redux</span>
                 </Card>
               </Col>
             </Row>
@@ -143,7 +145,7 @@ const Skills = () => {
         <Col xs={24} sm={24} md={24} lg={24} xl={12}>
           <Card
             title='Backend'
-            bodyStyle={{ border: 'none' }}
+            bodyStyle={{ border: 'none', paddingTop: 0 }}
             style={{
               backgroundColor: 'white',
               borderColor: 'lightGray',
@@ -158,7 +160,9 @@ const Skills = () => {
                   <Card bordered={false} style={{ backgroundColor: 'white' }}>
                     <i style={{ fontSize: '30px' }} class={item.icon}></i>
                     <br />
-                    <span style={{ fontSize: '15px' }}>{item.skill}</span>
+                    <span style={{ fontSize: width < 400 ? 9 : 15 }}>
+                      {item.skill}
+                    </span>
                   </Card>
                 </Col>
               ))}
@@ -166,7 +170,9 @@ const Skills = () => {
                 <Card bordered={false} style={{ backgroundColor: 'white' }}>
                   <img style={{ height: '35px' }} src={Mongoose}></img>
                   <br />
-                  <span style={{ fontSize: '15px' }}>Mongoose</span>
+                  <span style={{ fontSize: width < 400 ? 9 : 15 }}>
+                    Mongoose
+                  </span>
                 </Card>
               </Col>
             </Row>
@@ -175,14 +181,17 @@ const Skills = () => {
       </Row>
       <Card
         title='Other'
-        bodyStyle={{ border: 'none' }}
+        bodyStyle={{ border: 'none', paddingTop: 0 }}
         style={{
           backgroundColor: 'white',
           borderColor: 'lightGray',
           marginTop: 20,
           borderRadius: '15px'
         }}
-        headStyle={{ border: 'none', fontSize: 22 }}
+        headStyle={{
+          border: 'none',
+          fontSize: 22
+        }}
       >
         <Row>
           {other.map(item => (
@@ -192,7 +201,7 @@ const Skills = () => {
                   <Tag
                     style={{
                       lineHeight: '22px',
-                      fontSize: '15px',
+                      fontSize: width < 400 ? 12 : 15,
                       margin: 'auto',
                       textAlign: 'left'
                     }}

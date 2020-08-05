@@ -14,16 +14,26 @@ const { Sider } = Layout
 
 const Sidebar = () => {
   const [width] = useWindowSize()
-
+  const [hiddenImg, setHiddenImg] = useState(false)
   const [collapsed, setCollapsed] = useState(false)
 
   useEffect(() => {
     width < 767 ? setCollapsed(true) : setCollapsed(false)
+    width < 480 ? setHiddenImg(true) : setHiddenImg(false)
   }, [width])
+
+  const breakpoints = (xl, lg, md, sm, xs, xxs) => {
+    if (width > 1200) return xl
+    else if (width > 991 && width < 1200) return lg
+    else if (width > 767 && width < 992) return md
+    else if (width > 575 && width < 768) return sm
+    else if (width > 479 && width < 576) return xs
+    return xxs
+  }
 
   const styling = {
     menu: {
-      paddingTop: '40px',
+      paddingTop: breakpoints(40, 40, 40, 20, 20, 20),
       fontWeight: 'bold',
       textAlign: width > 767 ? 'left' : 'center'
     },
@@ -34,10 +44,12 @@ const Sidebar = () => {
       maxHeight: '100%'
     },
     padding: {
-      padding: width > 767 ? '25px' : '20px'
+      padding: width > 767 ? '25px' : '20px',
+      padding: breakpoints(25, 25, 25, 20, 20, 10)
     },
     menuItem: {
-      paddingLeft: width > 767 ? '50px' : 0
+      paddingLeft: width > 767 ? 50 : 0,
+      marginLeft: width < 480 ? -40 : 0
     }
   }
 
@@ -46,6 +58,7 @@ const Sidebar = () => {
       <Sider
         width={250}
         collapsed={collapsed}
+        collapsedWidth={width < 480 ? 40 : 80}
         style={{
           overflow: 'auto',
           borderRight: '1px solid #C4C4C4'
@@ -58,9 +71,13 @@ const Sidebar = () => {
           theme='dark'
           selectable={false}
         >
-          <div style={styling.padding}>
-            <img src={Dustin} style={styling.border} />
-          </div>
+          {hiddenImg ? (
+            <div />
+          ) : (
+            <div style={styling.padding}>
+              <img src={Dustin} style={styling.border} />
+            </div>
+          )}
 
           <Menu.Item key='1' icon={<UserOutlined style={styling.menuItem} />}>
             <Link style={{ textDecoration: 'none' }} to='/#about'>

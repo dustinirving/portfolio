@@ -78,7 +78,7 @@ const Projects = () => {
     <>
       <Typography style={{ marginTop: 50 }}>
         <Title
-          style={{ paddingBottom: '1rem', fontSize: width > 500 ? 38 : 32 }}
+          style={{ paddingBottom: '1rem', fontSize: width > 500 ? 38 : 28 }}
         >
           Projects
         </Title>
